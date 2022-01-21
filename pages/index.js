@@ -57,7 +57,7 @@ function CookieStandCreationForm() {
 
 function Footer() {
   return (
-    <p className="bg-emerald-500 p-4 mt-4"> &copy 2021</p>
+    <p className="bg-emerald-500 p-4 mt-4"> &copy; 2021</p>
   )
 }
 
