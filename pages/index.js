@@ -49,7 +49,7 @@ function CookieStandCreationForm() {
           <label htmlFor='avg-customers' className="block">Average Customers per Hour</label>
           <input id='avg-customers' type='number' className="block w-full"/>
         </div>
-        <input type='submit' value='Create' className='bg-emerald-500 p-4 w-48' />
+        <button type='submit' value='Create' className='bg-emerald-500 p-4 w-48 mb-4'>Create</button>
       </div>
     </form>
   )
