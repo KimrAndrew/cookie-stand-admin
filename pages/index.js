@@ -1,13 +1,11 @@
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
+import LocationsTable from '../components/LocationsTable';
 export default function Home() {
   return (
     <>
     <Head />
     <Main />
-    <div className="text-center">
-      <h3>Report Table Coming Soon...</h3>
-      <p>{'{\"location\":\"Barcelona\",\"minCustomers\":2,\"maxCustomers\":4,\"avgCookies\":2.5}'}</p>
-    </div>
+    <LocationsTable />
     <Footer count='5'/>
     </>
   )
