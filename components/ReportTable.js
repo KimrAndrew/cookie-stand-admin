@@ -1,4 +1,4 @@
-export default function LocationsTable(props) {
+export default function ReportTable(props) {
     return (
     <div className="text-center">
         <h3>Report Table Coming Soon...</h3>

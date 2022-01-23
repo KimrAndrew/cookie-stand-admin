@@ -1,11 +1,11 @@
 import Footer from '../components/Footer';
-import LocationsTable from '../components/LocationsTable';
+import ReportTable from '../components/ReportTable';
 export default function Home() {
   return (
     <>
     <Head />
     <Main />
-    <LocationsTable />
+    <ReportTable />
     <Footer count='5'/>
     </>
   )
