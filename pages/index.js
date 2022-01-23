@@ -5,8 +5,8 @@ export default function Home() {
     <>
     <Head />
     <Main />
-    <ReportTable reports={[]}/>
-    <Footer count={5}/>
+    <ReportTable reports={[5]}/>
+    <Footer count={0}/>
     </>
   )
 }
