@@ -1,3 +1,4 @@
+import Footer from '../components/Footer'
 export default function Home() {
   return (
     <>
@@ -7,7 +8,7 @@ export default function Home() {
       <h3>Report Table Coming Soon...</h3>
       <p>{'{\"location\":\"Barcelona\",\"minCustomers\":2,\"maxCustomers\":4,\"avgCookies\":2.5}'}</p>
     </div>
-    <Footer />
+    <Footer count='5'/>
     </>
   )
 }
@@ -55,9 +56,5 @@ function CookieStandCreationForm() {
   )
 }
 
-function Footer() {
-  return (
-    <p className="bg-emerald-500 p-4 mt-4"> &copy; 2021</p>
-  )
-}
+
 
