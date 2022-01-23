@@ -38,6 +38,7 @@ function CookieStandCreationForm() {
       locationData['maxCustomers'] = event.target.maxCustomers.value;
       locationData['avgCookies'] = event.target.avgCookies.value;
       locationData['hourlySales'] = [48,42,30,24,42,24,36,42,24,36];
+      return locationData;
     }}>
       <h2 className="text-2xl text-center p-4">Create Cookie Stand</h2>
       <div className="text-center w-full justify-between text-center">
