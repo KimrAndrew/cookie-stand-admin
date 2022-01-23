@@ -1,13 +1,16 @@
+import react from 'react';
 import Footer from '../components/Footer';
 import ReportTable from '../components/ReportTable';
 import CookieStandCreationForm from '../components/CookieStandCreationForm';
 export default function Home() {
+  const [numStands,setNumStands] = react.useState(6);
+  const [cookieStands,setCookieStands] = react.useState([]);
   return (
     <>
     <Head />
     <Main />
     <ReportTable reports={[5]}/>
-    <Footer count={0}/>
+    <Footer count={numStands}/>
     </>
   )
 }
