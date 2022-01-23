@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
     <Head />
-    <Main />
+    <Main cookieStands={cookieStands} setCookieStands={setCookieStands}/>
     <ReportTable reports={[5]}/>
     <Footer count={numStands}/>
     </>
@@ -23,10 +23,10 @@ function Head() {
   )
 }
 
-function Main() {
+function Main(props) {
   return(
     <>
-      <CookieStandCreationForm/>
+      <CookieStandCreationForm cookieStands={props.cookieStands} setCookieStands={props.setCookieStands} />
     </>
   )
 }
