@@ -1,3 +1,5 @@
+import ReportTableRow from './ReportTableRow';
+
 export default function ReportTable(props) {
     const hourlySales = [48,42,30,24,42,24,36,42,24,36]
     if (props.reports.length > 0) {
@@ -26,24 +28,7 @@ export default function ReportTable(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Calexico</td>
-                        <td>48</td>
-                        <td>42</td>
-                        <td>20</td>
-                        <td>24</td>
-                        <td>42</td>
-                        <td>24</td>
-                        <td>42</td>
-                        <td>24</td>
-                        <td>55</td>
-                        <td>12</td>
-                        <td>14</td>
-                        <td>34</td>
-                        <td>27</td>
-                        <td>43</td>
-                        <td>Location Total</td>
-                    </tr>
+                        <ReportTableRow />
                 </tbody>
             </table>
             <p>{'{\"location\":\"Barcelona\",\"minCustomers\":2,\"maxCustomers\":4,\"avgCookies\":2.5}'}</p>
@@ -54,5 +39,5 @@ export default function ReportTable(props) {
     <div className="text-center">
         <p>No Cookie Stands Available</p>
     </div>
-    )
+    );
 }
