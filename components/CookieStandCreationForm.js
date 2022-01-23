@@ -1,6 +1,12 @@
-export default function CookieStandCreationForm() {
+export default function CookieStandCreationForm(props) {
     return (
-      <form className='mt-8 m-auto w-8/12 bg-emerald-300' onSubmit={handleSubmit}>
+      <form className='mt-8 m-auto w-8/12 bg-emerald-300' onSubmit={(event) => {
+            // get the new cookieStand object created from the form data
+            const locationData = handleSubmit(event);
+
+            // update state in Home with newly created cookieStand
+            props.setCookieStands(props.cookieStands.push(locationData));
+        }}>
         <h2 className="text-2xl text-center p-4">Create Cookie Stand</h2>
         <div className="text-center w-full justify-between text-center">
           <label className="pr-2" htmlFor='locataion'>Location</label>
