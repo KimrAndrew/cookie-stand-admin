@@ -5,7 +5,16 @@ export default function CookieStandCreationForm(props) {
             const locationData = handleSubmit(event);
 
             // update state in Home with newly created cookieStand
-            props.setCookieStands(props.cookieStands.push(locationData));
+
+            /*
+                props are supposed to be read only, with that said it would be
+                more efficient to break that rule and append directly to the array
+                that gets passed in rather than needing to duplicate it to adhere
+                to that rule...
+            */
+            const currentStands = props.cookieStands.map(stand => stand);
+            currentStands.push(locationData);
+            props.setCookieStands(currentStands);
         }}>
         <h2 className="text-2xl text-center p-4">Create Cookie Stand</h2>
         <div className="text-center w-full justify-between text-center">

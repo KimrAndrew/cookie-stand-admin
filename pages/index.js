@@ -10,7 +10,7 @@ export default function Home() {
     <Head />
     <Main cookieStands={cookieStands} setCookieStands={setCookieStands}/>
     <ReportTable reports={[5]}/>
-    <Footer count={numStands}/>
+    <Footer count={cookieStands.length}/>
     </>
   )
 }
