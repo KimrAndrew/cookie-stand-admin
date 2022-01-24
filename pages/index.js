@@ -2,13 +2,14 @@ import react from 'react';
 import Footer from '../components/Footer';
 import ReportTable from '../components/ReportTable';
 import CookieStandCreationForm from '../components/CookieStandCreationForm';
+import { hours } from '../data/data.js';
 export default function Home() {
   const [cookieStands,setCookieStands] = react.useState([]);
   return (
     <>
     <Head />
     <Main cookieStands={cookieStands} setCookieStands={setCookieStands}/>
-    <ReportTable cookieStands={cookieStands}/>
+    <ReportTable hoursOfOperation={hours} cookieStands={cookieStands}/>
     <Footer count={cookieStands.length}/>
     </>
   )
