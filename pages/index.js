@@ -1,13 +1,16 @@
+import react from 'react';
+import Footer from '../components/Footer';
+import ReportTable from '../components/ReportTable';
+import CookieStandCreationForm from '../components/CookieStandCreationForm';
+import { hours } from '../data/data.js';
 export default function Home() {
+  const [cookieStands,setCookieStands] = react.useState([]);
   return (
     <>
     <Head />
-    <Main />
-    <div className="text-center">
-      <h3>Report Table Coming Soon...</h3>
-      <p>{'{\"location\":\"Barcelona\",\"minCustomers\":2,\"maxCustomers\":4,\"avgCookies\":2.5}'}</p>
-    </div>
-    <Footer />
+    <Main cookieStands={cookieStands} setCookieStands={setCookieStands}/>
+    <ReportTable hoursOfOperation={hours} cookieStands={cookieStands}/>
+    <Footer count={cookieStands.length}/>
     </>
   )
 }
@@ -20,44 +23,13 @@ function Head() {
   )
 }
 
-function Main() {
+function Main(props) {
   return(
     <>
-      <CookieStandCreationForm/>
+      <CookieStandCreationForm cookieStands={props.cookieStands} setCookieStands={props.setCookieStands} />
     </>
   )
 }
 
-function CookieStandCreationForm() {
-  return (
-    <form className='mt-8 m-auto w-8/12 bg-emerald-300'>
-      <h2 className="text-2xl text-center p-4">Create Cookie Stand</h2>
-      <div className="text-center w-full justify-between text-center">
-        <label className="pr-2">Location</label>
-        <input type='text' className="w-11/12" />
-      </div>
-      <div className="m-6 ">
-        <div className="inline-block w-1/4 mr-3 text-center">
-          <label htmlFor='min-customers' className="block">Minimum Customers per Hour</label>
-          <input id='min-customers' type='number' className="block w-full" />
-        </div>
-        <div className="inline-block w-1/4 mr-3 text-center">
-          <label htmlFor='max-customers' className="block">Maximum Customers per Hour</label>
-          <input id='max-customers' type='number' className="block w-full"/>
-        </div>
-        <div className="inline-block w-1/4 mr-3 text-center">
-          <label htmlFor='avg-customers' className="block">Average Customers per Hour</label>
-          <input id='avg-customers' type='number' className="block w-full"/>
-        </div>
-        <button type='submit' value='Create' className='bg-emerald-500 p-4 w-48 mb-4'>Create</button>
-      </div>
-    </form>
-  )
-}
 
-function Footer() {
-  return (
-    <p className="bg-emerald-500 p-4 mt-4"> &copy; 2021</p>
-  )
-}
 
