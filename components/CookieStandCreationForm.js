@@ -1,6 +1,6 @@
 export default function CookieStandCreationForm(props) {
     return (
-      <form className='mt-8 m-auto w-8/12 bg-emerald-300' onSubmit={(event) => {
+      <form className='mt-8 m-auto w-8/12 bg-emerald-300 text-center' onSubmit={(event) => {
             // get the new cookieStand object created from the form data
             const locationData = handleSubmit(event);
 
@@ -16,25 +16,27 @@ export default function CookieStandCreationForm(props) {
             currentStands.push(locationData);
             props.setCookieStands(currentStands);
         }}>
-        <h2 className="text-2xl text-center p-4">Create Cookie Stand</h2>
-        <div className="text-center w-full justify-between text-center">
-          <label className="pr-2" htmlFor='locataion'>Location</label>
-          <input name = 'location' type='text' className="w-11/12" />
-        </div>
-        <div className="m-6 ">
-          <div className="inline-block w-1/4 mr-3 text-center">
-            <label htmlFor='min-customers' className="block">Minimum Customers per Hour</label>
-            <input id='minCustomers' type='number' className="block w-full" />
+        <h2 className="text-2xl p-4 m-auto">Create Cookie Stand</h2>
+        <div className="p-4 m-auto">
+          <div className="mb-6">
+            <label className="pr-2" htmlFor='locataion'>Location</label>
+            <input name = 'location' type='text' className="w-11/12" />
           </div>
-          <div className="inline-block w-1/4 mr-3 text-center">
-            <label htmlFor='max-customers' className="block">Maximum Customers per Hour</label>
-            <input id='maxCustomers' type='number' className="block w-full"/>
+          <div className="flex justify-between">
+            <div className="inline-block w-56 text-center bg-emerald-200 rounded">
+              <label htmlFor='min-customers' className="block">Minimum Customers per Hour</label>
+              <input id='minCustomers' type='number' className="block w-52 m-auto" />
+            </div>
+            <div className="inline-block w-56 text-center bg-emerald-200 rounded">
+              <label htmlFor='max-customers' className="block">Maximum Customers per Hour</label>
+              <input id='maxCustomers' type='number' className="block w-52 m-auto"/>
+            </div>
+            <div className="inline-block w-56 text-center bg-emerald-200">
+              <label htmlFor='avg-customers' className="block">Average Customers per Hour</label>
+              <input id='avgCookies' type='number' className="block w-52 m-auto"/>
+            </div>
+            <button type='submit' value='Create' className='bg-emerald-500 p-4 w-56'>Create</button>
           </div>
-          <div className="inline-block w-1/4 mr-3 text-center">
-            <label htmlFor='avg-customers' className="block">Average Customers per Hour</label>
-            <input id='avgCookies' type='number' className="block w-full"/>
-          </div>
-          <button type='submit' value='Create' className='bg-emerald-500 p-4 w-48 mb-4'>Create</button>
         </div>
       </form>
     )
