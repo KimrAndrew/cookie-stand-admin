@@ -3,7 +3,6 @@ import Footer from '../components/Footer';
 import ReportTable from '../components/ReportTable';
 import CookieStandCreationForm from '../components/CookieStandCreationForm';
 export default function Home() {
-  const [numStands,setNumStands] = react.useState(6);
   const [cookieStands,setCookieStands] = react.useState([]);
   return (
     <>
