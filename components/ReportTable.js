@@ -1,8 +1,7 @@
 import ReportTableRow from './ReportTableRow';
 
 export default function ReportTable(props) {
-    if (props.reports.length > 0) {
-        console.log(props.reports.length)
+    if (props.cookieStands.length > 0) {
         return (
         <div className="text-center">
             <table>
@@ -27,10 +26,11 @@ export default function ReportTable(props) {
                     </tr>
                 </thead>
                 <tbody>
-                        <ReportTableRow />
+                        {props.cookieStands.map(location => {
+                            return <ReportTableRow key={location['location']} location={location}/>
+                        })}
                 </tbody>
             </table>
-            <p>{'{\"location\":\"Barcelona\",\"minCustomers\":2,\"maxCustomers\":4,\"avgCookies\":2.5}'}</p>
         </div>
         );
     }
