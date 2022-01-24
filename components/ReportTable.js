@@ -13,12 +13,14 @@ export default function ReportTable(props) {
                 </thead>
                 <tbody>
                         {props.cookieStands.map((location,i) => {
-                            if(i % 2 === 0) {
-                                let color = 'bg-emerald-200'
+                            let color;
+                            if(i % 2 == 0) {
+                                color = 'bg-emerald-300';
                             } else {
-                                let color = 'bg-emerald-300'
+                                color = 'bg-emerald-200'
                             }
-                            return <ReportTableRow key={i} location={location}/>
+                            console.log(color)
+                            return <ReportTableRow key={i} color={color} location={location}/>
                         })}
                 </tbody>
             </table>
