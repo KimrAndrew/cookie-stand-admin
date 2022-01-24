@@ -48,5 +48,8 @@ function handleSubmit(event) {
     locationData['maxCustomers'] = event.target.maxCustomers.value;
     locationData['avgCookies'] = event.target.avgCookies.value;
     locationData['hourlySales'] = [48,42,30,24,42,24,36,42,24,36];
+    locationData['total'] = locationData['hourlySales'].reduce((prev,current) => {
+        return prev + current;
+    });
     return locationData;
 }
