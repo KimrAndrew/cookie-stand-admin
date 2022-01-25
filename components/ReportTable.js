@@ -1,6 +1,23 @@
+import react from 'react';
 import ReportTableRow from './ReportTableRow';
 
 export default function ReportTable(props) {
+    const hourlyTotals = [];
+    let storeWideTotal = 0;
+    props.cookieStands.forEach((cookieStand) => {
+        storeWideTotal += cookieStand.total;
+        let timeSlotsTotaled = hourlyTotals.length -1;
+        for(let timeSlot = 0; timeSlot < cookieStand.hourlySales.length; timeSlot++) {
+            const timeSlotToAdd = cookieStand.hourlySales[timeSlot];
+            if (timeSlotsTotaled < timeSlot) {
+                hourlyTotals.push(timeSlotToAdd)
+            } else {
+                hourlyTotals[timeSlot] = hourlyTotals[timeSlot] + timeSlotToAdd;
+            }
+            console.log(hourlyTotals)
+        }
+    });
+    //setHourlyTotals(updatedTotals);
     if (props.cookieStands.length > 0) {
         return (
             <table className='m-auto w-8/12'>
@@ -12,17 +29,25 @@ export default function ReportTable(props) {
                     </tr>
                 </thead>
                 <tbody>
-                        {props.cookieStands.map((location,i) => {
-                            let color;
-                            if(i % 2 == 0) {
-                                color = 'bg-emerald-300';
-                            } else {
-                                color = 'bg-emerald-200'
-                            }
-                            console.log(color)
-                            return <ReportTableRow key={i} color={color} location={location}/>
+                        {
+                            props.cookieStands.map((location,i) => {
+                                let color;
+                                if(i % 2 == 0) {
+                                    color = 'bg-emerald-300';
+                                } else {
+                                    color = 'bg-emerald-200'
+                                }
+                                console.log(color)
+                                return <ReportTableRow key={i} color={color} location={location} />
                         })}
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Totals</td>
+                        {hourlyTotals.map((hourlyTotal,i) => <td key={i}>{hourlyTotal}</td>)}
+                        <td>{storeWideTotal}</td>
+                    </tr>
+                </tfoot>
             </table>
         );
     }
