@@ -42,10 +42,10 @@ export default function ReportTable(props) {
                         })}
                 </tbody>
                 <tfoot>
-                    <tr>
-                        <td>Totals</td>
-                        {hourlyTotals.map((hourlyTotal,i) => <td key={i}>{hourlyTotal}</td>)}
-                        <td>{storeWideTotal}</td>
+                    <tr className='bg-emerald-500'>
+                        <td className='border-emerald-700 border-2'>Totals</td>
+                        {hourlyTotals.map((hourlyTotal,i) => <td className='border-emerald-700 border-2' key={i}>{hourlyTotal}</td>)}
+                        <td className='border-emerald-700 border-2'>{storeWideTotal}</td>
                     </tr>
                 </tfoot>
             </table>
